@@ -3,13 +3,8 @@
 - hosts: all
   tasks:
 
-    - name: Install nginx (Debian)
+    - name: Install nginx
       apt: name=nginx
-      when: ansible_os_family == "Debian"
-
-    - name: Install nginx (RedHat)
-      yum: name=nginx
-      when: ansible_os_family == "RedHat"
 
     - name: Install nginx config
       template:
